@@ -14,6 +14,9 @@
 docker-compose run --rm php ./vendor/bin/phpunit
 ```
 
+## Google Api 
+you need to add GOOGLE_API key to .env (this can be found in the zip file)
+
 ## Endpoints
 #### Get all tickets
 ``
