@@ -56,7 +56,7 @@ class TicketController extends Controller
      */
     public function filterBy(Request $request, TicketInterface $service)
     {
-        return $service->getData();
+        return $service->getData(true);
     }
 
     /**

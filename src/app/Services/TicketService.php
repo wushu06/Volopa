@@ -15,13 +15,14 @@ class TicketService implements TicketInterface
     /**
      * @return LengthAwarePaginator
      */
-    public function getData(): LengthAwarePaginator
+    public function getData($withoutGlobal = false): LengthAwarePaginator
     {
-        return Ticket::latest()
-            ->withoutGlobalScope(FilterScope::class)
-            ->orderBy('status', $request->dir ?? 'ASC')
-            ->paginate(self::page);
+        $ticket = Ticket::latest();
+        return $withoutGlobal ?
+            $ticket->orderBy('status', $request->dir ?? 'ASC')->paginate(self::page) :
+            $ticket->withoutGlobalScope(FilterScope::class)->orderBy('status', $request->dir ?? 'ASC')->paginate(self::page);
     }
+
     /**
      * @param Request $request
      * @return LengthAwarePaginator

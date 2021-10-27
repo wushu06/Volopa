@@ -4,9 +4,18 @@
 
 - `docker-compose up -d --build`.
 - `docker-compose run --rm composer install`
-- `docker-compose run --rm npm run dev`
+- `docker-compose run --rm key:generate `
 - `docker-compose run --rm migrate:refresh --seed`
 
+## Env
+copy env.example and set the correct database credentials
+
+````
+MYSQL_PORT=3308
+MYSQL_DB=volopa
+MYSQL_USER=volopa
+MYSQL_PASSWORD=secret
+````
 
 ## Testing
 
