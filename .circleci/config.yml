@@ -7,7 +7,7 @@ jobs:
     working_directory: ~/repo # Default working directory, where your project will be cloned
     steps:
       - checkout
-      - run: docker-compose up -d
+      - run: docker-compose up --build
       - run: cp ./src/.env.example ./src/.env
       - run: docker-compose run --rm composer install
       - run: docker-compose run --rm key:generate
