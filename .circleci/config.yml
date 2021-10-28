@@ -9,7 +9,7 @@ jobs:
       - checkout
       - run: docker-compose up --build
       - run: cp ./src/.env.example ./src/.env
-      - run: docker-compose run --rm composer install
+      - run: docker-compose run --rm sudo composer install
       - run: docker-compose run --rm key:generate
       - run: docker-compose run --rm migrate:refresh --seed
       - run: docker-compose run --rm php ./vendor/bin/phpunit
