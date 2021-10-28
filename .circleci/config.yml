@@ -9,7 +9,7 @@ jobs:
       - checkout
       - run: docker-compose up -d --build
       - run: docker-compose down
-      - run: docker-compose up
+      - run: docker-compose up  
       - run: cp ./src/.env.example ./src/.env
       - run: docker-compose run --rm sudo composer install
       - run: docker-compose run --rm key:generate
